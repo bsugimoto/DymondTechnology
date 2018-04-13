@@ -1,7 +1,6 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
-# from django.conf import settings
 
 from accounts import views as accounts_views
 from opportunities import views as opportunities_views
@@ -13,6 +12,7 @@ urlpatterns = [
     # Start new urls
 
     url(r'^opportunities/$', opportunities_views.OpportunityListView.as_view(), name='opportunities_list'),
+
 
     # End new urls
 

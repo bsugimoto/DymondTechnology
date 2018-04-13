@@ -14,7 +14,6 @@ def signup(request):
         form = SignUpForm(request.POST)
         form2 = ProfileForm(request.POST, request.FILES)
         if form.is_valid() and form2.is_valid():
-            form2.save()
             user = form.save()
             user.refresh_from_db()
             form2 = ProfileForm(request.POST, request.FILES, instance=user.profile)
