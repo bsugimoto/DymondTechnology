@@ -31,7 +31,7 @@ def signup(request):
 def update_profile(request):
     if request.method == 'POST':
         user_form = UserInformationUpdateForm(request.POST, instance=request.user)
-        profile_form = ProfileInformationUpdateForm(request.POST, instance=request.user.profile)
+        profile_form = ProfileInformationUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
@@ -43,3 +43,25 @@ def update_profile(request):
         user_form = UserInformationUpdateForm(instance=request.user)
         profile_form = ProfileInformationUpdateForm(instance=request.user.profile)
     return render(request, 'my_account.html', {'user_form': user_form,'profile_form': profile_form})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
