@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load humanize %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">Opportunities</li>
+{% endblock %}
+{% block content %}
+<div style="overflow-x:auto;">
+<table>
+    <tr>
+        <th>Organization</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date Posted</th>
+        <th>Date Due</th>
+    </tr>
+    {% for opportunity in opportunities %}
+        <tr>
+          <td>{{ opportunity.organization }}</td>
+          <td>{{ opportunity.title }}</td>
+          <td>{{ opportunity.description}}</td>
+          <td>{{ opportunity.published_date }}</td>
+          <td>{{ opportunity.due_date }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

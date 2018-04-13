@@ -1,12 +1,20 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from accounts import views as accounts_views
+from opportunities import views as opportunities_views
 from boards import views
 
 
 urlpatterns = [
+    
+    # Start new urls
+
+    url(r'^opportunities/$', opportunities_views.OpportunityListView.as_view(), name='opportunities_list'),
+
+    # End new urls
+
     url(r'^$', views.BoardListView.as_view(), name='home'),
     url(r'^signup/$', accounts_views.signup, name='signup'),
     url(r'^login/$', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
