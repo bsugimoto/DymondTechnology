@@ -13,20 +13,31 @@
       <div class="wrapper">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
           <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">Django Boards</a>
+            <a class="navbar-brand" href="http://www.dymondtechnologies.com/">
+              <img src="{% static 'img/dymond_logo.png' %}" alt="Dymond_Logo" style="height: 40px;">
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="mainMenu">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'home' %}">Boards</a>
+                  <a class="nav-link" href="http://www.dymondtechnologies.com/about/" target="_blank" rel="noopener">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://simpleisbetterthancomplex.com/series/beginners-guide/1.11/" target="_blank" rel="noopener">Tutorial</a>
+                  <a class="nav-link" href="http://www.dymondtechnologies.com/our-services/" target="_blank" rel="noopener">Services</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="https://github.com/sibtc/django-beginners-guide" target="_blank" rel="noopener">GitHub</a>
+                  <a class="nav-link" href="http://www.dymondtechnologies.com/how-we-can-help-you/" target="_blank" rel="noopener">How We can Help You</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://www.dymondtechnologies.com/clients/" target="_blank" rel="noopener">Clients</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="http://www.dymondtechnologies.com/contact-us/" target="_blank" rel="noopener">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'opportunities_list' %}">Opportunities</a>
                 </li>
               </ul>
               {% if user.is_authenticated %}
@@ -64,9 +75,7 @@
       </div>
       <footer>
         <div class="container">
-          <a href="http://sibt.co/2xhZa6M" rel="nofollow noopener" target="_blank">
-            <img src="{% static 'img/DO_Powered_by_Badge_black.png' %}" alt="Powered by DigitalOcean" style="height: 30px;">
-          </a>
+
         </div>
       </footer>
     {% endblock body %}

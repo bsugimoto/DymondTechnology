@@ -1,6 +1,7 @@
 from django.conf.urls import url, include
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
+# from django.conf import settings
 
 from accounts import views as accounts_views
 from opportunities import views as opportunities_views
@@ -37,7 +38,8 @@ urlpatterns = [
         auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'),
         name='password_reset_complete'),
 
-    url(r'^settings/account/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
+    #url(r'^settings/account/$', accounts_views.UserUpdateView.as_view(), name='my_account'),
+    url(r'^settings/account/$', accounts_views.update_profile, name='my_account'),
     url(r'^settings/password/$', auth_views.PasswordChangeView.as_view(template_name='password_change.html'),
         name='password_change'),
     url(r'^settings/password/done/$', auth_views.PasswordChangeDoneView.as_view(template_name='password_change_done.html'),
@@ -51,3 +53,4 @@ urlpatterns = [
         views.PostUpdateView.as_view(), name='edit_post'),
     url(r'^admin/', admin.site.urls),
 ]
+

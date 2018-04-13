@@ -9,9 +9,11 @@
 {% block content %}
   <div class="row">
     <div class="col-lg-6 col-md-8 col-sm-10">
-      <form method="post" novalidate>
+      <form enctype="multipart/form-data" method="post" novalidate>
         {% csrf_token %}
-        {% include 'includes/form.html' %}
+        <!-- {% include 'includes/form.html' %} -->
+        {{ user_form.as_p }}
+        {{ profile_form.as_p }}
         <button type="submit" class="btn btn-success">Save changes</button>
       </form>
     </div>

@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
 
     'widget_tweaks',
+    'multiselectfield',
 
     'accounts',
     'boards',
