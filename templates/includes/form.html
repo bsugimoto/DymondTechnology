@@ -26,15 +26,15 @@
 {% endfor %}
 
 {% for field in form2 %}
-  <div class="form-group has-errors text-danger small">
+<!--   <div class="form-group has-errors text-danger small">
     {{field.errors}}
   </div>
   <div class="form-group">
     {{field}}
   </div>
-{% endfor %}
+{% endfor %} -->
 
-<!-- {% for field in form2 %}
+{% for field in form2 %}
   <div class="form-group">
     {{ field.label_tag }}
     {% render_field field class=field|input_class %}
@@ -49,4 +49,4 @@
       </small>
     {% endif %}
   </div>
-{% endfor %} -->
+{% endfor %}
