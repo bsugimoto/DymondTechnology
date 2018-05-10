@@ -14,6 +14,10 @@ class Opportunity(models.Model):
     due_date = models.DateTimeField(
             blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Opportunity'
+        verbose_name_plural = 'Opportunites'
+
     def publish(self):
         self.published_date = timezone.now()
         self.save()
