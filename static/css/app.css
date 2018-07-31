@@ -30,3 +30,8 @@ footer {
   background-color: #e9ecef;
   position: relative;
 }
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
