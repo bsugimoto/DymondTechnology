@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="opportunity">
+        {% if opportunity.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        <h1>{{ opportunity.title }}</h1>
+        <p>{{ opportunity.text|linebreaksbr }}</p>
+    </div>
+
+{% endblock %}

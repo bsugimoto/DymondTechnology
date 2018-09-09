@@ -10,8 +10,8 @@ from opportunities import views as opportunities_views
 urlpatterns = [
     
     # Start new urls
-
     url(r'^opportunities/$', opportunities_views.OpportunityListView.as_view(), name='opportunities_list'),
+    url(r'^opportunities/(?P<pk>\d+)/$', opportunities_views.OpportunityDetailView.as_view(), name='opportunity_details'),
 
 
     # End new urls
